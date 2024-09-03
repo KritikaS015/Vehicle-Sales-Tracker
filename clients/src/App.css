@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --color-yellow: #f9c74f;
+  --color-purple: #9d4edd;
+}
+
+*>* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 4em 0;
+}
+
+.bg-yellow {
+  background-color: var(--color-yellow);
+}
+
+.bg-purple {
+  background-color: var(--color-purple);
+}
+
+.chart.title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-input {
+  @apply mt-1 block w-full py-2 px-3 border border-gray-200 bg-white rounded-md focus:outline-none focus:ring-indigo-500 sm:text-sm
+}
+
+
+/* App.css */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 0.3rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.username {
+  margin-right: 1rem;
+}
+
+.sign-out {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 2rem;
+}
+
+.sign-out:hover {
+  background-color: #e63900;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  filter: none; /* Remove blur effect when sidebar is open */
+}
+
+.sidebar nav {
+  padding-top: 14rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #555;
+}
+
+.sidebar ul li.active {
+  background-color: #666;
+}
+
+.sidebar ul li.active:hover {
+  background-color: #777;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: #333;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+  z-index: 1001;
+}
+
+.toggle-btn.open {
+  transform: translateX(250px) translateY(-50%);
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid white;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+
+.content {
+  width: 80%;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.footer .social-icons a {
+  color: white;
+  margin: 0 0.5rem;
+}
+
+.footer .social-icons a:hover {
+  color: #ff4500;
+}
+
+.footer .copyright {
+  font-size: 0.8rem;
+}
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  animation: zoomInOut 3s infinite alternate; /* Added zoom in and out animation */
+}
+
+.image.large {
+  width: 990px; /* Adjust width as needed */
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+.blur .main-content {
+  filter: blur(5px); /* Apply blur effect to main content only */
+}
+
+
+@keyframes imageMotion {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.welcome {
+  font-size: 4.0rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+  color: #333; /* Change the color if necessary */
+  text-align: center; /* Center align the text */
+  margin-bottom: 2rem; /* Add some space below the message */
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 1s ease forwards;
+}
+
+hr.bold {
+  border: 1px solid #333; /* Thicker border color */
+}
