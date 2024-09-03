@@ -37,12 +37,12 @@ Backend:
     <img src="./images/addNew.jpeg">
 </p>
 
-<h2 align="center">bike Details</h2>
+<h2 align="center">Bike Details</h2>
 <p align="center">
     <img src="./images/bikeSales.jpeg">
 </p>
 
-<h2 align="center">car Details</h2>
+<h2 align="center">Car Details</h2>
 <p align="center">
     <img src="./images/carSales.jpeg">
 </p>
